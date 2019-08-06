@@ -1,7 +1,7 @@
 [![Travis branch](https://img.shields.io/travis/SnowdogApps/magento2-frontools/master.svg)](https://travis-ci.org/SnowdogApps/magento2-frontools) [![Packagist](https://img.shields.io/packagist/v/snowdog/frontools.svg)](https://packagist.org/packages/snowdog/frontools) [![Packagist](https://img.shields.io/packagist/dt/snowdog/frontools.svg)](https://packagist.org/packages/snowdog/frontools) [![Greenkeeper badge](https://badges.greenkeeper.io/SnowdogApps/magento2-frontools.svg)](https://greenkeeper.io/)
 
-# Magento 2 Frontools
-Set of front-end tools for Magento 2, based on Gulp.js
+# Magento 2 Frontools - For August Ash
+Set of front-end tools for Magento 2, based on Gulp.js - For August Ash Themeing.
 
 ## Questions
 If you want to know more about this project, let's join [Magento Community Engineering Slack](https://tinyurl.com/engcom-slack) and ask questions on #magefront channel.
@@ -16,11 +16,12 @@ If you want to know more about this project, let's join [Magento Community Engin
 1. Run `composer require snowdog/frontools`
 2. Go to package directory `cd vendor/snowdog/frontools`
 3. Run `yarn` or `npm install`
-4. Decide where you want to keep your config files.
+4. Run `yarn add stylelint-order stylelint-scss`
+5. Decide where you want to keep your config files.
 You can store them in Frontools `config` directory or in `dev/tools/frontools/config`.
 There is a `gulp setup` task to copy all sample config files from the `config` to `dev/tools/frontools/config` and create a convenient symlink `tools` in the project root.
 If you want to keep config files inside frontools `config` dir, you have to handle this manually.
-5. Define your themes in `themes.json`.
+6. Define your themes in `themes.json`.
 
 ## `themes.json` structure
 Check `config/themes.json.sample` to get samples.
@@ -45,6 +46,7 @@ You will find sample config files for theses plugins in `vendor/snowdog/frontool
 * Create [sass-lint](https://github.com/sasstools/sass-lint) configuration
 * Create [stylelint](https://github.com/stylelint/stylelint) configuration
 * Create [svg-sprite](https://github.com/jkphl/gulp-svg-sprite) configuration
+* The sample `stylelint.yml` has been updated to include August Ash rules
 
 ## Tasks list
 * `babel` - Run [Babel](https://babeljs.io/), a compiler for writing next generation JavaScript.
@@ -76,6 +78,7 @@ You will find sample config files for theses plugins in `vendor/snowdog/frontool
   * `--ci` - Enable throwing errors. Useful in CI/CD pipelines.
 * `svg` - Run [svg-sprite](https://github.com/jkphl/gulp-svg-sprite) to generate SVG sprite.
   * `--theme name` - Process single theme.
+* `ashlint` - Runs [stylelint](https://github.com/stylelint/stylelint) based tests with August Ash specific linting rules applied.
 * `watch` - Watch for style changes and run processing tasks.
   * `--theme name` - Process single theme.
   * `--disableLinting` - Disable SASS and CSS linting.

@@ -1,18 +1,127 @@
 extends: stylelint-config-standard
+plugins:
+  - stylelint-order
+  - stylelint-scss
 rules:
-  at-rule-empty-line-before: null
+  at-rule-blacklist: debug
+  at-rule-empty-line-before:
+    - always
+    - except:
+      - first-nested
+      ignore:
+      - after-comment
+      - blockless-after-blockless
+      ignoreAtRules:
+      - extends
+      - ignores
+      - mixin
+      - function
+      - include
+      - if
+      - each
+      - else
+      - warn
+      - return
+      - error
+      - extend
+  at-rule-no-unknown:
+    - true
+    - ignoreAtRules:
+      - extends
+      - ignores
+      - mixin
+      - function
+      - include
+      - if
+      - each
+      - else
+      - warn
+      - return
+      - error
+      - extend
   block-closing-brace-newline-before: null
-  indentation: null
-  rule-empty-line-before: null
-  selector-list-comma-newline-after: null
-  selector-pseudo-element-colon-notation: null
-  selector-descendant-combinator-no-non-space: null
-  shorthand-property-no-redundant-values: null
-  declaration-block-no-shorthand-property-overrides: null
-  declaration-block-no-duplicate-properties: null
-  comment-empty-line-before: null
+  block-no-empty: true
   color-hex-length: null
-  no-descending-specificity: null
+  color-named:
+    - never
+    - message: "Avoid using color literals."
+  color-no-hex: true
+  comment-empty-line-before: null
+  declaration-block-no-duplicate-properties: null
+  declaration-block-no-shorthand-property-overrides: null
+  declaration-block-trailing-semicolon: always
+  declaration-empty-line-before: never
+  declaration-no-important:
+    - true
+    - message: "There's an !important tag. Is that supposed to be there?"
+  declaration-property-value-blacklist:
+    - '/^border/': none
+    - severity: warning
   font-family-no-missing-generic-family-keyword: null
-  no-duplicate-selectors: null
+  function-parentheses-space-inside: never-single-line
+  function-url-quotes:
+    - always
+    - message: "URLs should be wrapped in quotes"
+      severity: warning
+  indentation:
+    - 2
+    - severity: warning
+  length-zero-no-unit:
+    - true
+    - message: "A length set to 0 does not need a unit."
   max-empty-lines: null
+  max-nesting-depth: 8
+  no-descending-specificity: null
+  no-duplicate-selectors: null
+  no-missing-end-of-source-newline: true
+  number-leading-zero: always
+  property-no-vendor-prefix:
+    - true
+    - severity: warning
+  rule-empty-line-before:
+    - always
+    - ignore:
+      - after-comment
+  selector-class-pattern: "/^([a-zA-Z0-9_-]+-?)+$/"
+  selector-descendant-combinator-no-non-space: null
+  selector-id-pattern: "/^([a-zA-Z0-9_]+-?)+$/"
+  selector-list-comma-newline-after: null
+  selector-max-id:
+    - 0
+    - message: "There's an ID being used. Is that supposed to be there?"
+  selector-no-qualifying-type:
+    - true
+    - ignore:
+      - attribute
+      - class
+  selector-pseudo-element-colon-notation: single
+  shorthand-property-no-redundant-values:
+    - true
+    - severity: warning
+  string-quotes:
+    - single
+    - message: "Single quotes should be used."
+  unit-whitelist:
+    - px
+    - "%"
+    - em
+    - rem
+    - s
+    - ms
+    - deg
+    - vw
+    - vh
+  order/order:
+    - type: at-rule
+      name: include
+    - declarations
+    - type: at-rule
+      name: include
+      parameter: breakpoint
+  scss/at-extend-no-missing-placeholder: true
+  scss/at-function-parentheses-space-before: never
+  scss/dollar-variable-pattern: "/^[a-z\\-]+$/"
+  scss/at-function-pattern: "/^[a-z\\-]+$/"
+  scss/at-mixin-pattern: "/^[a-z\\-]+$/"
+  scss/at-mixin-argumentless-call-parentheses: never
+  scss/percent-placeholder-pattern: "/^([a-z0-9]+-?)+$/"
