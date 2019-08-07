@@ -13,13 +13,25 @@ If you want to know more about this project, let's join [Magento Community Engin
 * Magento 2 project with SASS based theme for example [SASS version of "Blank"](https://github.com/SnowdogApps/magento2-theme-blank-sass) or [Alpaca Theme](https://github.com/SnowdogApps/magento2-alpaca-theme)
 
 ## Installation
-1. Run `composer require snowdog/frontools`
-2. Go to package directory `cd vendor/snowdog/frontools`
-3. Run `yarn` or `npm install`
-4. Run `yarn add stylelint-order stylelint-scss`
-5. Decide where you want to keep your config files.
+
+### Install via composer
+
+```bash
+$ composer config repositories.augustash-frontools-1.7 vcs https://github.com/augustash/magento2-frontools-1.7.git
+$ composer require snowdog/frontools:~1.7.2
+```
+
+### Setup
+
+1. Go to package directory `cd vendor/snowdog/frontools`
+2. Run `yarn` or `npm install`
+3. Run `yarn add stylelint-order stylelint-scss`
+4. Decide where you want to keep your config files.
+
 You can store them in Frontools `config` directory or in `dev/tools/frontools/config`.
+
 There is a `gulp setup` task to copy all sample config files from the `config` to `dev/tools/frontools/config` and create a convenient symlink `tools` in the project root.
+
 If you want to keep config files inside frontools `config` dir, you have to handle this manually.
 6. Define your themes in `themes.json`.
 
