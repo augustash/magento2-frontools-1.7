@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(gulp, plugins, config, name, file) { // eslint-disable-line func-names
-  const theme          = config.themes["apc-frontendtheme"],
+  const theme          = config.themes["YOUR-THEME-ID"],
         srcBase        = config.projectPath + theme.src,
         sassLintConfig = require('../helper/config-loader')('sass-lint.yml', plugins, config);
 
