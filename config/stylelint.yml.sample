@@ -82,7 +82,7 @@ rules:
     - always
     - ignore:
       - after-comment
-  selector-class-pattern: "/^([a-zA-Z0-9_-]+-?)+$/"
+  # selector-class-pattern: "/^([a-zA-Z0-9_-]+-?)+$/"
   selector-descendant-combinator-no-non-space: null
   selector-id-pattern: "/^([a-zA-Z0-9_]+-?)+$/"
   selector-list-comma-newline-after: null
@@ -120,8 +120,4 @@ rules:
       parameter: breakpoint
   scss/at-extend-no-missing-placeholder: true
   scss/at-function-parentheses-space-before: never
-  scss/dollar-variable-pattern: "/^[a-z\\-]+$/"
-  scss/at-function-pattern: "/^[a-z\\-]+$/"
-  scss/at-mixin-pattern: "/^[a-z\\-]+$/"
   scss/at-mixin-argumentless-call-parentheses: never
-  scss/percent-placeholder-pattern: "/^([a-z0-9]+-?)+$/"
